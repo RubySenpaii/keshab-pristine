@@ -5,9 +5,9 @@ import { solutions } from "@/lib/content";
 
 export function Solutions() {
   return (
-    <section id="solutions" className="w-full bg-surface-container px-6 py-20 lg:px-12">
+    <section id="solutions" className="w-full bg-surface-container px-6 py-16 md:py-20 lg:px-12">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-16">
+        <div className="mb-10 md:mb-16">
           <SectionHeading
             centered
             eyebrow="Portfolio of Capabilities"
@@ -16,13 +16,13 @@ export function Solutions() {
           />
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
           {solutions.map((solution) => (
             <article
               key={solution.title}
               className="flex flex-col overflow-hidden rounded-2xl bg-surface-container-lowest shadow-sm transition-all hover:shadow-lg"
             >
-              <div className="relative h-56 w-full">
+              <div className="relative h-48 w-full sm:h-56">
                 <Image
                   src={solution.image}
                   alt={solution.imageAlt}
@@ -36,30 +36,30 @@ export function Solutions() {
                 </span>
               </div>
 
-              <div className="flex flex-1 flex-col justify-between p-8">
+              <div className="flex flex-1 flex-col justify-between p-6 md:p-8">
                 <div>
                   <h3 className="font-heading text-headline-sm font-bold text-on-surface">{solution.title}</h3>
                   <p className="mt-2 text-body-md text-on-surface-variant">{solution.body}</p>
-                  <ul className="mt-4 grid grid-cols-2 gap-2 text-body-sm text-on-surface-variant">
+                  <ul className="mt-4 grid grid-cols-1 gap-2 text-body-sm text-on-surface-variant sm:grid-cols-2">
                     {solution.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-1.5">
-                        <Icon name="check" className="text-[16px] text-secondary" />
+                        <Icon name="check" className="shrink-0 text-[16px] text-secondary" />
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="mt-6 flex items-center justify-between pt-6">
+                <div className="mt-5 flex flex-col gap-3 pt-5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-4 md:mt-6 md:pt-6">
                   <span className="font-heading text-headline-sm font-bold text-on-surface">
                     {solution.price}{" "}
-                    <span className="font-sans text-body-sm font-normal text-on-surface-variant">
+                    <span className="font-sans text-body-sm font-normal whitespace-nowrap text-on-surface-variant">
                       {solution.priceUnit}
                     </span>
                   </span>
                   <a
                     href="#estimator"
-                    className="rounded-lg bg-surface-container-high px-5 py-2.5 text-label-lg text-on-surface transition-colors hover:bg-surface-container-highest"
+                    className="rounded-lg bg-surface-container-high px-5 py-2.5 text-center text-label-lg whitespace-nowrap text-on-surface transition-colors hover:bg-surface-container-highest"
                   >
                     {solution.cta}
                   </a>

@@ -48,11 +48,11 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-space-xl flex flex-col items-center justify-between gap-space-sm pt-space-lg sm:flex-row">
-          <p className="text-body-sm text-on-surface-variant">
+        <div className="mt-space-xl flex flex-col items-center justify-between gap-space-sm border-t border-surface-container pt-space-lg sm:flex-row sm:border-t-0">
+          <p className="text-center text-body-sm text-on-surface-variant sm:text-left">
             © 2026 {company.legalName}. All rights reserved.
           </p>
-          <LogoLockup className="h-9 w-auto md:h-10" />
+          <LogoLockup className="hidden h-9 w-auto sm:block md:h-10" />
         </div>
       </div>
     </footer>

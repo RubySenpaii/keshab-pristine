@@ -114,8 +114,8 @@
 
 @layer base {
   html {
+    @apply scroll-pt-18 md:scroll-pt-24;
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
   }
 
   body {

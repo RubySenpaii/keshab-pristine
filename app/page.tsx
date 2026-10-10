@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main id="top" className="w-full bg-surface pt-24">
+      <main id="top" className="w-full bg-surface pt-20 md:pt-24">
         <Hero />
         <Estimator />
         <Pillars />

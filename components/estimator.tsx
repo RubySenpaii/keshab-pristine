@@ -31,9 +31,9 @@ export function Estimator() {
   const price = estimatePrice({ service, bedrooms, bathrooms, sqft, discount });
 
   return (
-    <section id="estimator" className="w-full bg-surface-container-low px-6 py-20 lg:px-12">
+    <section id="estimator" className="w-full bg-surface-container-low px-4 py-16 sm:px-6 md:py-20 lg:px-12">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12">
+        <div className="mb-8 px-2 sm:px-0 md:mb-12">
           <SectionHeading
             centered
             eyebrow="Transparent Pricing Engine"
@@ -42,8 +42,8 @@ export function Estimator() {
           />
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
-          <div className="flex flex-col gap-8 rounded-2xl bg-surface-container-lowest p-6 shadow-md md:p-8 lg:col-span-8">
+        <div className="grid grid-cols-1 items-start gap-6 md:gap-8 lg:grid-cols-12">
+          <div className="flex flex-col gap-7 rounded-2xl bg-surface-container-lowest p-5 shadow-md sm:p-6 md:gap-8 md:p-8 lg:col-span-8">
             <fieldset>
               <legend className="mb-3 block text-label-lg text-on-surface">1. Select Service Category</legend>
               <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
@@ -110,7 +110,7 @@ export function Estimator() {
               <legend className="mb-3 block text-label-lg text-on-surface">
                 3. Frequency &amp; Stewardship Schedule
               </legend>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
                 {frequencyOptions.map((opt) => {
                   const active = opt.id === frequency;
                   const isStandard = opt.badge === "Standard";
@@ -150,11 +150,30 @@ export function Estimator() {
                 })}
               </div>
             </fieldset>
+
+            <div className="sticky bottom-3 z-10 -mx-2 flex items-center justify-between gap-3 rounded-xl border border-surface-container bg-surface-container-lowest/95 p-3 pl-4 shadow-[0_20px_35px_-10px_rgba(15,23,42,0.12),0_1px_3px_rgba(15,23,42,0.04)] backdrop-blur-lg lg:hidden">
+              <div className="min-w-0">
+                <div className="text-label-md text-on-surface-variant">Estimated per visit</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-heading text-headline-md font-bold text-on-surface">${price.final}</span>
+                  {discount > 0 && (
+                    <span className="text-body-sm text-on-surface-variant line-through">${price.original}</span>
+                  )}
+                </div>
+              </div>
+              <a
+                href="#book"
+                className="flex shrink-0 items-center gap-1.5 rounded-lg bg-secondary px-4 py-3 text-label-lg text-on-secondary shadow-md transition-all hover:bg-on-secondary-container"
+              >
+                <Icon name="calendar_month" className="text-[18px]" />
+                Reserve
+              </a>
+            </div>
           </div>
 
-          <aside className="sticky top-28 flex flex-col justify-between rounded-2xl bg-surface-container-lowest p-6 shadow-xl md:p-8 lg:col-span-4">
+          <aside className="flex flex-col justify-between rounded-2xl bg-surface-container-lowest p-5 shadow-xl sm:p-6 md:p-8 lg:sticky lg:top-28 lg:col-span-4">
             <div>
-              <div className="flex items-center justify-between pb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-4">
                 <span className="font-heading text-label-badge tracking-wider text-on-surface-variant uppercase">
                   Live Breakdown
                 </span>

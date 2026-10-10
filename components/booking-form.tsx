@@ -29,7 +29,7 @@ export function BookingForm() {
   return (
     <form className="flex flex-col gap-3 pt-2" onSubmit={handleSubmit}>
       <input className={inputClass} placeholder="Full Name" aria-label="Full name" name="name" autoComplete="name" required />
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-2">
         <input
           className={inputClass}
           placeholder="Phone Number"
