@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#bg)"/>
+  <g transform="translate(50, 52) scale(0.5)">
+    <path d="M 0,-76 L 66,-18 L 48,-18 L 48,26 L -48,26 L -48,-18 L -66,-18 Z" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+    <g fill="#38BDF8">
+      <rect x="-23" y="-12" width="19" height="15" rx="2"/>
+      <rect x="4" y="-12" width="19" height="15" rx="2"/>
+      <rect x="-23" y="7" width="19" height="15" rx="2"/>
+      <rect x="4" y="7" width="19" height="15" rx="2"/>
+    </g>
+    <path d="M -66,32 C -45,70 0,80 0,80 C 0,80 45,70 66,32 C 42,56 0,60 0,60 C 0,60 -42,56 -66,32 Z" fill="url(#wave)"/>
+  </g>
+</svg>
